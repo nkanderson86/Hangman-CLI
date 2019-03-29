@@ -4,11 +4,11 @@ let randomWords = require("random-words");
 
 class Game {
   constructor(game) {
-    this.guesses = 10;
+    this.guesses = 12;
     this.score = 0;
-    this.selectedWord = randomWords();
-    this.startGame();
+    this.selectedWord = "";
     this.guessedLetters = [];
+    this.startGame();
   }
 
   startGame() {
@@ -20,7 +20,7 @@ class Game {
       })
       .then(answer => {
         console.log("Welcome to Hangman! You're up " + answer.player);
-        this.selectedWord = new Word(this.selectedWord);
+        this.selectedWord = new Word(randomWords());
         this.refreshPage();
         this.playGame();
       });
@@ -34,7 +34,7 @@ class Game {
         this.score +
         "\nGuesses Remaining: " +
         this.guesses +
-        "\n Guessed Letters: " +
+        "\nGuessed Letters: " +
         this.guessedLetters
     );
   }
@@ -50,7 +50,8 @@ class Game {
             console.log("Please enter a single letter!");
             return false;
           }
-          //   else if (this.guessedLetters.indexOf(input) !== -1) {
+          //  TODO: Fix this!!! ...
+          // else if (this.guessedLetters.indexOf(input) !== -1) {
           //     console.log("You've already guessed that letter! Please try again");
           //     return false;
           //   }
@@ -88,7 +89,11 @@ class Game {
       })
       .then(answer => {
         if (answer.again === true) {
-          this.startGame();
+          this.guessedLetters = [];
+          this.guesses = 12;
+          this.selectedWord = new Word(randomWords());
+          this.refreshPage();
+          this.playGame();
         } else {
           console.log("Thanks for playing!");
         }
