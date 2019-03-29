@@ -1,0 +1,24 @@
+{
+  "name": "Hangman-CLI",
+  "version": "1.0.0",
+  "description": "Hangman that will run in terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkanderson86/Hangman-CLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkanderson86/Hangman-CLI/issues"
+  },
+  "homepage": "https://github.com/nkanderson86/Hangman-CLI#readme",
+  "dependencies": {
+    "inquirer": "^6.2.2",
+    "random-words": "^1.1.0"
+  }
+}
