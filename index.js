@@ -40,21 +40,19 @@ class Game {
   }
 
   playGame() {
+    let guessed = this.guessedLetters;
     inquirer
       .prompt({
         type: "input",
         message: "Guess a letter! Any letter!",
         name: "guess",
         validate: function singleLetter(input) {
-          if (input.length != 1) {
-            console.log("Please enter a single letter!");
+          if (input.length != 1 || guessed.includes(input)) {
+            console.log(
+              "\n Please enter a single letter that you have not yet guessed!"
+            );
             return false;
           }
-          //  TODO: Fix this!!! ...
-          // else if (this.guessedLetters.indexOf(input) !== -1) {
-          //     console.log("You've already guessed that letter! Please try again");
-          //     return false;
-          //   }
           return true;
         }
       })
