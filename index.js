@@ -2,6 +2,7 @@ let Word = require("./word");
 let inquirer = require("inquirer");
 let randomWords = require("random-words");
 
+// setting up a Game class to call to start each instance of the game.  I delcare a few variables that will be updated as the user players.  I also set up a variable to store the selected word and an array to hold gussed letters.
 class Game {
   constructor(game) {
     this.guesses = 12;
@@ -11,6 +12,7 @@ class Game {
     this.startGame();
   }
 
+  // grab name from user. then, i set the selected word equal to a random word thanks to the npm package I found that will serve up random words without an array to pull from. I call the refreshPage method and the playGame method to get the gameplay rolling.
   startGame() {
     inquirer
       .prompt({
@@ -26,6 +28,7 @@ class Game {
       });
   }
 
+  // method to console.log everything the user needs to see to play the game
   refreshPage() {
     console.log(
       "\n" +
@@ -39,6 +42,7 @@ class Game {
     );
   }
 
+  // grab a letter from the user, validate that it is a single char and it hasn't been guessed yet. then I take that guess and psuh it to my guessedLetters array and call the guess method from my word.js sheet.  at the end of this method I check for win/loss conditions and if neither are met I recursivley call the playGame method until one is met.
   playGame() {
     let guessed = this.guessedLetters;
     inquirer
@@ -78,6 +82,7 @@ class Game {
       });
   }
 
+  // simple function to check with the user on if they would like to play again.  Resets the variables for the new game if they choose yes.
   playAgain() {
     inquirer
       .prompt({
