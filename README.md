@@ -2,8 +2,8 @@
 
 Oh, what a difference a few weeks can make. My first attempt at coding this game was not successful and was quite a frustrating experience. This time around, I was able to conquer the game and was surprised at how easy it was! This game will run in the terminal by calling the index.js sheet with node.
 
-The video doesn't want to embed so here's a link to the file in my repo:
-https://github.com/nkanderson86/Hangman-CLI/blob/master/Hangman%20CLI.mov
+Quick video demo of the game:
+[![Hangman Node CLI](http://img.youtube.com/vi/di5omJ8HaxE/0.jpg)](http://www.youtube.com/watch?v=di5omJ8HaxE "Hangman Node CLI")
 
 ### Classes, classes, classes!
 
