@@ -9,7 +9,7 @@ https://github.com/nkanderson86/Hangman-CLI/blob/master/Hangman%20CLI.mov
 
 I used classes to set up my letter, word, and game objects and I really enjoyed the process of setting things up. It was a great excercise in planning things out and then buidling up each required piece for the game (letter, word) and then using those pieces to string together the game logic.
 
-# NPM packages
+### NPM packages
 
 I was stoked on incorporating the randomWord package and it made setting up my game super easy because I no longer have to worry about creating an array with words or hooking up some API call to grab a random one. I find the NPM stuff incredibly powerful and very easy to work with.
 
